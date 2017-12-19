@@ -45,7 +45,7 @@ gulp.task('watch', function () {
 //gulp를 실행하면 default 로 uglify task와 watch task를 실행
 gulp.task('default', ['uglify', 'watch', 'compress-html', 'minify-css', 'copy-lib']);
 
-gulp.task('deploy', ['default'], () => {
-return gulp.src('dist/**/*')
-  .pipe($.ghPages());
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
 });
